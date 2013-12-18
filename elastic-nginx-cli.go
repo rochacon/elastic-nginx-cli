@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+	"os"
 	"strings"
 )
 
@@ -17,13 +18,18 @@ func main() {
 	var event string
 	var host string
 
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage of %s: InstanceId...\n", os.Args[0])
+		flag.PrintDefaults()
+	}
+
 	flag.StringVar(&topicArn, "topic-arn", "", "Topic ARN")
 	flag.StringVar(&autoScalingGroupARN, "asg-arn", "", "Auto Scaling Group ARN")
 	flag.StringVar(&event, "event", "launch", "Auto Scaling Event (launch/terminate)")
 	flag.StringVar(&host, "host", "127.0.0.1:5000", "Elastic NGINX host (may include port, e.g. 127.0.0.1:5000)")
 	flag.Parse()
 
-	if topicArn == "" || autoScalingGroupARN == "" {
+	if topicArn == "" || autoScalingGroupARN == "" || len(flag.Args()) == 0 {
 		flag.Usage()
 		return
 	}
