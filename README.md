@@ -3,7 +3,7 @@ Elastic NGINX cli
 
 `elastic-nginx-cli` is a simple cli for [Elastic NGINX](https://github.com/rochacon/elastic-nginx).
 
-This allows you to add or remove a EC2 instance from a Elastic NGINX managed upstream.
+This allows you to add or remove EC2 instances from a Elastic NGINX managed upstream.
 
 
 Setup
