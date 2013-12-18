@@ -9,7 +9,9 @@ This allows you to add or remove a EC2 instance from a Elastic NGINX managed ups
 Setup
 -----
 
-`go get github.com/rochacon/elastic-nginx-cli`
+```
+go get github.com/rochacon/elastic-nginx-cli
+```
 
 
 Usage
