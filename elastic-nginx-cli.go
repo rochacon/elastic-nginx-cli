@@ -19,7 +19,7 @@ func main() {
 	var host string
 
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage of %s: InstanceId...\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Usage: %s [InstanceId]...\n", os.Args[0])
 		flag.PrintDefaults()
 	}
 
